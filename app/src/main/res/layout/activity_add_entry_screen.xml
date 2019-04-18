@@ -7,19 +7,17 @@
     tools:context=".AddEntryScreen">
 
     <Button
-        android:id="@+id/statsButton2"
+        android:id="@+id/add_screen_journal_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="viewJournalScreen"
         android:text="@string/journal_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/homeButton2"
+        android:id="@+id/add_screen_home_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="homeScreen"
         android:text="@string/home_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
