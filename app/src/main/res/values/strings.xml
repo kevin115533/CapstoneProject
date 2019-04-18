@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MacroTracker</string>
+    <string name="add_button">Add Food Entry</string>
+    <string name="journal_button">View Entries</string>
+    <string name="home_button">Home</string>
+
 </resources>
