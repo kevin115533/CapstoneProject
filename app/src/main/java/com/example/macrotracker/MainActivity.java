@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        LayoutInflater inflater = new LayoutInflater
-        view = getLayoutInflater()
+        //LayoutInflater inflater = new LayoutInflater
+        //view = getLayoutInflater()
         addButton = (Button) findViewById(R.id.main_add_button);
         viewEntriesButton = (Button) findViewById(R.id.main_journal_button);
         addButton();
-        viewEntriesButton();
+        viewEntriesButton(this);
 
     }
 
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void viewEntriesButton(){
+    public void viewEntriesButton(MainActivity view){
         viewEntriesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

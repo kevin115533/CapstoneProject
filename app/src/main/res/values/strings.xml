@@ -3,5 +3,13 @@
     <string name="add_button">Add Food Entry</string>
     <string name="journal_button">View Entries</string>
     <string name="home_button">Home</string>
+    <string name="home_screen">home screeen</string>
+    <string name="add_name">Enter name of entry:</string>
+    <string name="add_protein">Enter amount of protein:</string>
+    <string name="add_carb">Enter amount of carbs:</string>
+    <string name="add_fat">Enter amount of fat:</string>
+    <string name="estimated_amount">Estimated calories:</string>
+    <string name="add_entry">Add Entry</string>
+    <dimen name="add_screen_label_size">24sp</dimen>
 
 </resources>
