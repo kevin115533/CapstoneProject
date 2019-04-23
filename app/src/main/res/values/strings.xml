@@ -10,6 +10,16 @@
     <string name="add_fat">Enter amount of fat:</string>
     <string name="estimated_amount">Estimated calories:</string>
     <string name="add_entry">Add Entry</string>
+    <string name="daily_total_label">Daily Totals</string>
+    <string name="set_goals_button">Set Goals</string>
+    <string name="goal_header_label">Enter your total daily goals</string>
+    <string name="goal_screen_protein_label">Protein: </string>
+    <string name="goal_screen_carb_label">Carbs: </string>
+    <string name="goal_screen_fat_label">Fat: </string>
+    <string name="grams">Grams</string>
+    <string name="add_goal_button">Update Goals</string>
     <dimen name="add_screen_label_size">24sp</dimen>
+    <dimen name="goal_screen_label_size">24sp</dimen>
+    <string name="title_activity_set_goal_screen">SetGoalScreen</string>
 
 </resources>

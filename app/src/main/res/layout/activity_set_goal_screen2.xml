@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SetGoalScreen">
+
+    <Button
+        android:id="@+id/goal_screen_home_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/home_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/update_goal_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/add_goal_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/goal_screen_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/goal_header_label"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/goal_protein_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/goal_screen_protein_label"
+        android:textSize="@dimen/goal_screen_label_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goalPro"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/goal_carb_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/goal_screen_carb_label"
+        android:textSize="@dimen/goal_screen_label_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goalCar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/goal_screen_fat_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/goal_screen_fat_label"
+        android:textSize="@dimen/goal_screen_label_size"
+        app:layout_constraintBaseline_toBaselineOf="@+id/goalFat"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/goalPro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="phone"
+        android:textSize="@dimen/goal_screen_label_size"
+        android:hint="@string/grams"
+        app:layout_constraintStart_toEndOf="@+id/goal_protein_label"
+        app:layout_constraintTop_toBottomOf="@+id/goal_screen_header" />
+
+    <EditText
+        android:id="@+id/goalCar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="phone"
+        android:hint="@string/grams"
+        android:textSize="@dimen/goal_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/goal_carb_label"
+        app:layout_constraintTop_toBottomOf="@+id/goalPro" />
+
+    <EditText
+        android:id="@+id/goalFat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="3"
+        android:inputType="phone"
+        android:hint="@string/grams"
+        android:textSize="@dimen/goal_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/goal_screen_fat_label"
+        app:layout_constraintTop_toBottomOf="@+id/goalCar" />
+</android.support.constraint.ConstraintLayout>
