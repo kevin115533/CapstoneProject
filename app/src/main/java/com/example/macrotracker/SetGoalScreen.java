@@ -43,14 +43,31 @@ public class SetGoalScreen extends AppCompatActivity {
     }
 
     public void addGoal(){
-        int pro;
-        int car;
-        int fat;
         updateButton.setOnClickListener(new View.OnClickListener() {
+            int pro;
+            int car;
+            int fat;
             @Override
             public void onClick(View v) {
+                if(gPro.getText().toString().equals("")){
+                    pro = 0;
+                }else{
+                    pro = Integer.parseInt(gPro.getText().toString());
+                }
 
-                Goals goal = new Goals(Integer.parseInt(gPro.getText().toString()),Integer.parseInt(gCar.getText().toString()),Integer.parseInt(gFat.getText().toString()));
+                if(gCar.getText().toString().equals("")){
+                    car = 0;
+                }else{
+                    car = Integer.parseInt(gCar.getText().toString());
+                }
+
+                if(gFat.getText().toString().equals("")){
+                    fat = 0;
+                }else{
+                    fat = Integer.parseInt(gFat.getText().toString());
+                }
+                Goals goal = new Goals(pro, car, fat);
+                //Goals goal = new Goals(Integer.parseInt(gPro.getText().toString()),Integer.parseInt(gCar.getText().toString()),Integer.parseInt(gFat.getText().toString()));
                 boolean addGoal = myDBManager.addGoalsToDB(goal);
 
                 if(addGoal == true){
