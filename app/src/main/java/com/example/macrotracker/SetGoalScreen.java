@@ -28,7 +28,7 @@ public class SetGoalScreen extends AppCompatActivity {
         gFat = (EditText) findViewById(R.id.goalFat);
 
         homeButton();
-        updateButton();
+        addGoal();
     }
 
     public void homeButton(){
@@ -36,16 +36,20 @@ public class SetGoalScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(), MainActivity.class);
+                intent = new Intent(SetGoalScreen.this, MainActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public void addFoodToLog(){
+    public void addGoal(){
+        int pro;
+        int car;
+        int fat;
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Goals goal = new Goals(Integer.parseInt(gPro.getText().toString()),Integer.parseInt(gCar.getText().toString()),Integer.parseInt(gFat.getText().toString()));
                 boolean addGoal = myDBManager.addGoalsToDB(goal);
 

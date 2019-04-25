@@ -81,9 +81,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="3"
-        android:inputType="phone"
+        android:inputType="number"
         android:textSize="@dimen/goal_screen_label_size"
-        android:hint="@string/grams"
+        android:hint="@string/default_entry_amount"
         app:layout_constraintStart_toEndOf="@+id/goal_protein_label"
         app:layout_constraintTop_toBottomOf="@+id/goal_screen_header" />
 
@@ -95,8 +95,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="3"
-        android:inputType="phone"
-        android:hint="@string/grams"
+        android:inputType="number"
+        android:hint="@string/default_entry_amount"
         android:textSize="@dimen/goal_screen_label_size"
         app:layout_constraintStart_toEndOf="@+id/goal_carb_label"
         app:layout_constraintTop_toBottomOf="@+id/goalPro" />
@@ -109,8 +109,8 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:ems="3"
-        android:inputType="phone"
-        android:hint="@string/grams"
+        android:inputType="number"
+        android:hint="@string/default_entry_amount"
         android:textSize="@dimen/goal_screen_label_size"
         app:layout_constraintStart_toEndOf="@+id/goal_screen_fat_label"
         app:layout_constraintTop_toBottomOf="@+id/goalCar" />

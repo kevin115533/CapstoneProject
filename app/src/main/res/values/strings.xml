@@ -17,6 +17,8 @@
     <string name="goal_screen_carb_label">Carbs: </string>
     <string name="goal_screen_fat_label">Fat: </string>
     <string name="grams">Grams</string>
+    <string name="sample_entry_name">Entry name here</string>
+    <string name="default_entry_amount">0</string>
     <string name="add_goal_button">Update Goals</string>
     <dimen name="add_screen_label_size">24sp</dimen>
     <dimen name="goal_screen_label_size">24sp</dimen>

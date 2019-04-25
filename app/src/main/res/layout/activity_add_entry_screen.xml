@@ -29,7 +29,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:autofillHints=""
+        android:hint="@string/sample_entry_name"
         android:ems="10"
         android:textSize="@dimen/add_screen_label_size"
         android:inputType="textPersonName"
@@ -44,8 +44,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:textSize="@dimen/add_screen_label_size"
+        android:hint="@string/default_entry_amount"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_pro_amount" />
 
@@ -57,8 +58,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:textSize="@dimen/add_screen_label_size"
+        android:hint="@string/default_entry_amount"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_carb_amount" />
 
@@ -70,8 +72,9 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:textSize="@dimen/add_screen_label_size"
+        android:hint="@string/default_entry_amount"
         android:ems="10"
-        android:inputType="phone"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/label_fat_amount" />
 
@@ -135,28 +138,5 @@
         android:textSize="@dimen/add_screen_label_size"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newUserCarb" />
-
-    <TextView
-        android:id="@+id/label_estimated"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/estimated_amount"
-        android:textSize="@dimen/add_screen_label_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newUserFat" />
-
-    <TextView
-        android:id="@+id/estimated_calorie_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="@dimen/add_screen_label_size"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_estimated" />
 
 </android.support.constraint.ConstraintLayout>

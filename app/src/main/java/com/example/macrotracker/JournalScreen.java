@@ -32,7 +32,7 @@ public class JournalScreen extends MainActivity {
         addEntryButton = (Button)findViewById(R.id.j_screen_add_button);
 
         viewHomeButton();
-        viewEntriesButton();
+        switchToAddScreen();
     }
 
     public void viewHomeButton(){
@@ -40,18 +40,18 @@ public class JournalScreen extends MainActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),MainActivity.class);
+                intent = new Intent(JournalScreen.this,MainActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public void viewEntriesButton(){
+    public void switchToAddScreen(){
         addEntryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),AddEntryScreen.class);
+                intent = new Intent(JournalScreen.this,AddEntryScreen.class);
                 startActivity(intent);
             }
         });

@@ -11,20 +11,17 @@ public class MainActivity extends AppCompatActivity {
     private Button addButton;
     private Button viewEntriesButton;
     private Button updateGoalsButton;
-    private MyDBManager myDBManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        myDBManager = new MyDBManager(this);
         addButton = (Button) findViewById(R.id.main_add_button);
         viewEntriesButton = (Button) findViewById(R.id.main_journal_button);
         updateGoalsButton = (Button) findViewById(R.id.set_goal_button);
         addButton();
         viewEntriesButton();
         setGoalsButton();
-
     }
 
     public void addButton(){
@@ -32,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(), AddEntryScreen.class);
+                intent = new Intent(MainActivity.this, AddEntryScreen.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),JournalScreen.class);
+                intent = new Intent(MainActivity.this,JournalScreen.class);
                 startActivity(intent);
             }
         });
@@ -54,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),SetGoalScreen.class);
+                intent = new Intent(MainActivity.this,SetGoalScreen.class);
                 startActivity(intent);
             }
         });

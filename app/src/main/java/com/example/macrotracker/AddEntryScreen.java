@@ -17,9 +17,7 @@ public class AddEntryScreen extends AppCompatActivity {
     private Button addItemButton;
     private Button homeButton;
     private Button viewEntryButton;
-    private TextView estimatedText;
     private MyDBManager myDBManager;
-    private boolean keepEstimating = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,46 +27,53 @@ public class AddEntryScreen extends AppCompatActivity {
         etUserCarb = (EditText) findViewById(R.id.newUserCarb);
         etUserPro = (EditText) findViewById(R.id.newUserPro);
         etUserFat = (EditText) findViewById(R.id.newUserFat);
-        estimatedText = (TextView) findViewById(R.id.estimated_calorie_amount);
         addItemButton = (Button) findViewById(R.id.addNewItemButton);
         homeButton = (Button) findViewById(R.id.add_screen_home_button);
         viewEntryButton = (Button) findViewById(R.id.add_screen_journal_button);
         myDBManager = new MyDBManager(this);
-        //estimatedText.setText(estimatedAmount(0, 0, 0));
 
         addFoodToLog();
         viewHomeButton();
         switchToJournal();
     }
 
-    /*public String estimatedAmount(int x, int y, int z){
-        if(x ==0){ x= 0;}
-        else {
-            x = Integer.parseInt(etUserPro.getText().toString());
-        }
-        if(y ==0){ y= 0;}
-        else{
-            y = Integer.parseInt(etUserCarb.getText().toString());
-        }
-        if(z ==0){ z= 0;}
-        else {
-            z = Integer.parseInt(etUserFat.getText().toString());
-        }
-        int amount = (x*4) + (y*4) + (z*9);
-        String estAmount = Integer.toString(amount);
-        return estAmount;
-    }*/
-
     public void addFoodToLog(){
         addItemButton.setOnClickListener(new View.OnClickListener() {
+            String name;
+            int pro;
+            int car;
+            int fat;
             @Override
             public void onClick(View v) {
-                Food food = new Food(etFoodName.getText().toString(), Integer.parseInt(etUserPro.getText().toString()), Integer.parseInt(etUserCarb.getText().toString()), Integer.parseInt(etUserFat.getText().toString()));
+                if(etFoodName.getText().toString().equals("")){
+                    name = "Entry name not added";
+                } else{
+                    name = etFoodName.getText().toString();
+                }
+
+                if(etUserPro.getText().toString().equals("")) {
+                    pro = 0;
+                } else {
+                    pro = Integer.parseInt(etUserPro.getText().toString());
+                }
+
+                if(etUserCarb.getText().toString().equals("")) {
+                    car = 0;
+                }else {
+                    car = Integer.parseInt(etUserCarb.getText().toString());
+                }
+
+                if(etUserFat.getText().toString().equals("")) {
+                    fat = 0;
+                }else {
+                    fat = Integer.parseInt(etUserFat.getText().toString());
+                }
+
+                Food food = new Food(name, pro, car, fat);
                 boolean insertData = myDBManager.addFoodToDb(food);
 
                 if(insertData == true){
                     Toast.makeText(AddEntryScreen.this, "Entry Added!", Toast.LENGTH_SHORT).show();
-                    //keepEstimating = false;
                 }else{
                     Toast.makeText(AddEntryScreen.this, "There was an error!", Toast.LENGTH_SHORT).show();
                 }
@@ -81,7 +86,7 @@ public class AddEntryScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),MainActivity.class);
+                intent = new Intent(AddEntryScreen.this,MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -92,7 +97,7 @@ public class AddEntryScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(v.getContext(),JournalScreen.class);
+                intent = new Intent(AddEntryScreen.this,JournalScreen.class);
                 startActivity(intent);
             }
         });
