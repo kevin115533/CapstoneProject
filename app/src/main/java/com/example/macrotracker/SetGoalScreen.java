@@ -67,7 +67,6 @@ public class SetGoalScreen extends AppCompatActivity {
                     fat = Integer.parseInt(gFat.getText().toString());
                 }
                 Goals goal = new Goals(pro, car, fat);
-                //Goals goal = new Goals(Integer.parseInt(gPro.getText().toString()),Integer.parseInt(gCar.getText().toString()),Integer.parseInt(gFat.getText().toString()));
                 boolean addGoal = myDBManager.addGoalsToDB(goal);
 
                 if(addGoal == true){

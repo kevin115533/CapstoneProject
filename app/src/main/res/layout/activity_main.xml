@@ -6,6 +6,42 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/cal_consumed_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/consumed_cal_label"
+        app:layout_constraintTop_toBottomOf="@+id/fat_consumed_goal" />
+
+    <TextView
+        android:id="@+id/fat_consumed_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/main_fat_label"
+        app:layout_constraintTop_toBottomOf="@+id/car_consumed_goal" />
+
+    <TextView
+        android:id="@+id/car_consumed_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="8dp"
+        android:text="TextView"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/main_car_label"
+        app:layout_constraintTop_toBottomOf="@+id/pro_consumed_goal" />
+
     <Button
         android:id="@+id/main_add_button"
         android:layout_width="wrap_content"
@@ -56,4 +92,75 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/main_journal_button"
         app:layout_constraintStart_toEndOf="@+id/main_add_button" />
+
+    <TextView
+        android:id="@+id/main_pro_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="@string/goal_screen_protein_label"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_daily_totals" />
+
+    <TextView
+        android:id="@+id/main_car_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/goal_screen_carb_label"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_pro_label" />
+
+    <TextView
+        android:id="@+id/main_fat_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/goal_screen_fat_label"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_car_label" />
+
+    <TextView
+        android:id="@+id/main_cal_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/total_cal_label"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_fat_label" />
+
+    <TextView
+        android:id="@+id/consumed_cal_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/total_cal_label"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_fat_label" />
+
+    <TextView
+        android:id="@+id/pro_consumed_goal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:text="TextView"
+        android:textSize="@dimen/add_screen_label_size"
+        app:layout_constraintStart_toEndOf="@+id/main_pro_label"
+        app:layout_constraintTop_toBottomOf="@+id/label_daily_totals" />
+
 </android.support.constraint.ConstraintLayout>

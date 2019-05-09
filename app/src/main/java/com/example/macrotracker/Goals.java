@@ -4,11 +4,21 @@ public class Goals {
     private int gPro;
     private int gCar;
     private int gFat;
+    private int totCal;
 
-    Goals(int pro , int car, int fat){
+    Goals(int pro,int car,int fat){
         setgPro(pro);
         setgCar(car);
         setgFat(fat);
+        setTotCal(pro, car, fat);
+    }
+
+    public int getTotCal() {
+        return totCal;
+    }
+
+    public void setTotCal(int x, int y, int z) {
+        totCal = (x * 4) + (y * 4) + (z * 9);
     }
 
     public int getgPro() {

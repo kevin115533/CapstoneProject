@@ -22,6 +22,7 @@
     <string name="add_goal_button">Update Goals</string>
     <dimen name="add_screen_label_size">24sp</dimen>
     <dimen name="goal_screen_label_size">24sp</dimen>
+    <string name="total_cal_label">Calories: </string>
     <string name="title_activity_set_goal_screen">SetGoalScreen</string>
 
 </resources>

@@ -99,4 +99,48 @@ public class MyDBManager extends SQLiteOpenHelper {
         c.close();
         return foodList;
     }
+
+    public Goals consumedGoals(){
+        String[] columns = {ColumnNames.TableFoodNames.COLUMN_PROTEIN, ColumnNames.TableFoodNames.COLUMN_CARB, ColumnNames.TableFoodNames.COLUMN_FAT};
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.query(ColumnNames.TableFoodNames.TABLE_FOODS, columns, null, null, null, null, null);
+
+        int iPro = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_PROTEIN);
+        int iCar = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_CARB);
+        int iFat = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_FAT);
+        int cPro = 0;
+        int cCar = 0;
+        int cFat = 0;
+
+        c.moveToFirst();
+
+        for (int i = 1; i <= c.getCount(); i++) {
+            cPro = cPro + c.getInt(iPro);
+            cCar = cCar + c.getInt(iCar);
+            cFat = cFat + c.getInt(iFat);
+            c.moveToNext();
+        }
+
+        Goals cGoals = new Goals(cPro, cCar, cFat);
+        c.close();
+        return cGoals;
+    }
+
+    public Goals setGoals(){
+        String[] columns = {ColumnNames.TableGoalNames.COLUMN_GOAL_PROTEIN,ColumnNames.TableGoalNames.COLUMN_GOAL_CARB,ColumnNames.TableGoalNames.COLUMN_GOAL_FAT,ColumnNames.TableGoalNames.COLUMN_GOAL_CALORIE };
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.query(ColumnNames.TableGoalNames.TABLE_GOALS, columns, null, null, null, null,null);
+        int sPro = c.getColumnIndex(ColumnNames.TableGoalNames.COLUMN_GOAL_PROTEIN);
+        int sCar = c.getColumnIndex(ColumnNames.TableGoalNames.COLUMN_GOAL_CARB);
+        int sFat = c.getColumnIndex(ColumnNames.TableGoalNames.COLUMN_GOAL_FAT);
+
+        c.moveToFirst();
+
+        int gPro = c.getInt(sPro);
+        int gCar = c.getInt(sCar);
+        int gFat = c.getInt(sFat);
+        c.close();
+        Goals sGoals = new Goals(gPro, gCar, gFat);
+        return sGoals;
+    }
 }
