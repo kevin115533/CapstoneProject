@@ -68,7 +68,8 @@ public class MyDBManager extends SQLiteOpenHelper {
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_PROTEIN, goals.getgPro());
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_CARB, goals.getgCar());
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_FAT, goals.getgFat());
-        long result = db.insert(ColumnNames.TableGoalNames.TABLE_GOALS, null, values);
+        //long result = db.insert(ColumnNames.TableGoalNames.TABLE_GOALS, null, values);
+        int result = db.update(ColumnNames.TableGoalNames.TABLE_GOALS,values,null, null);
         if (result == -1) {
             return false;
         } else {
