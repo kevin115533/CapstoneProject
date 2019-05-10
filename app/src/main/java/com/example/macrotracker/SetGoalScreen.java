@@ -71,10 +71,10 @@ public class SetGoalScreen extends AppCompatActivity {
 
                 if(addGoal == true){
                     Toast.makeText(SetGoalScreen.this, "Goals Updated!", Toast.LENGTH_SHORT).show();
-                    //keepEstimating = false;
                 }else{
                     Toast.makeText(SetGoalScreen.this, "There was an error!", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
     }

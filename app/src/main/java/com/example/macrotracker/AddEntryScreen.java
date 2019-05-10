@@ -77,8 +77,13 @@ public class AddEntryScreen extends AppCompatActivity {
                 }else{
                     Toast.makeText(AddEntryScreen.this, "There was an error!", Toast.LENGTH_SHORT).show();
                 }
+                etFoodName.setText("");
+                etUserPro.setText("");
+                etUserCarb.setText("");
+                etUserFat.setText("");
             }
         });
+
     }
 
     public void viewHomeButton(){

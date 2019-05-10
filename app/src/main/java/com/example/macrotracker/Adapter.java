@@ -4,42 +4,29 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public ArrayList<FoodEntry> efoodList;
-    private OnItemClicked onClick;
-
-    public interface OnItemClicked{
-        void onItemClick(int position);
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         public TextView textView1;
         public TextView textView2;
         public TextView textView3;
         public TextView textView4;
         public TextView textView5;
+        public TextView textView6;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(final View itemView) {
             super(itemView);
             textView1 = itemView.findViewById(R.id.entryName);
             textView2 = itemView.findViewById(R.id.pAmount);
             textView3 = itemView.findViewById(R.id.cAmount);
             textView4 = itemView.findViewById(R.id.fAmount);
             textView5 = itemView.findViewById(R.id.calorieAmount);
-
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    onClick.onItemClick(getAdapterPosition());
-                }
-            });
-
+            textView6 = itemView.findViewById(R.id.itemNum);
         }
     }
 
@@ -63,16 +50,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         viewHolder.textView3.setText(Integer.toString(currentItem.geteCar()));
         viewHolder.textView4.setText(Integer.toString(currentItem.geteFat()));
         viewHolder.textView5.setText(Integer.toString(currentItem.geteTotal()));
-
+        viewHolder.textView6.setText(Integer.toString(currentItem.geteID()));
     }
 
     @Override
     public int getItemCount() {
         return efoodList.size();
-    }
-
-    public void setOnClick(OnItemClicked onClick){
-        this.onClick=onClick;
     }
 
 }

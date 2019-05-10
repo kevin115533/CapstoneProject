@@ -68,8 +68,8 @@ public class MyDBManager extends SQLiteOpenHelper {
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_PROTEIN, goals.getgPro());
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_CARB, goals.getgCar());
         values.put(ColumnNames.TableGoalNames.COLUMN_GOAL_FAT, goals.getgFat());
-        //long result = db.insert(ColumnNames.TableGoalNames.TABLE_GOALS, null, values);
         int result = db.update(ColumnNames.TableGoalNames.TABLE_GOALS,values,null, null);
+        //long result = db.insert(ColumnNames.TableGoalNames.TABLE_GOALS, null,values);
         if (result == -1) {
             return false;
         } else {
@@ -88,12 +88,11 @@ public class MyDBManager extends SQLiteOpenHelper {
         int iPro = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_PROTEIN);
         int iCar = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_CARB);
         int iFat = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_FAT);
-        int iTot = c.getColumnIndex(ColumnNames.TableFoodNames.COLUMN_TOTAL);
 
         c.moveToFirst();
 
         for (int i = 1; i <= c.getCount(); i++) {
-            foodList.add(new FoodEntry(c.getString(iName), c.getInt(iPro), c.getInt(iCar), c.getInt(iFat)));
+            foodList.add(new FoodEntry(c.getString(iName), c.getInt(iPro), c.getInt(iCar), c.getInt(iFat),c.getInt(iID)));
             c.moveToNext();
         }
 
@@ -143,5 +142,10 @@ public class MyDBManager extends SQLiteOpenHelper {
         c.close();
         Goals sGoals = new Goals(gPro, gCar, gFat);
         return sGoals;
+    }
+
+    public void deleteRow(int id){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + ColumnNames.TableFoodNames.TABLE_FOODS + " WHERE " + ColumnNames.TableFoodNames.COLUMN_ID + "=\"" + id + "\";");
     }
 }

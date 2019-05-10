@@ -8,12 +8,13 @@ public class FoodEntry {
     private int eTotal;
     private int eID;
 
-    public FoodEntry(String name, int pro, int car, int fat){
+    public FoodEntry(String name, int pro, int car, int fat, int fID){
         eName = name;
         ePro = pro;
         eCar = car;
         eFat = fat;
         eTotal = addTotal(pro, car, fat);
+        eID = fID;
     }
 
     public int getePro(){

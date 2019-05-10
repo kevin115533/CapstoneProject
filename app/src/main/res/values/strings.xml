@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">MacroTracker</string>
-    <string name="add_button">Add Food Entry</string>
+    <string name="add_button">Add Entry</string>
     <string name="journal_button">View Entries</string>
     <string name="home_button">Home</string>
     <string name="home_screen">home screeen</string>
@@ -24,5 +24,6 @@
     <dimen name="goal_screen_label_size">24sp</dimen>
     <string name="total_cal_label">Calories: </string>
     <string name="title_activity_set_goal_screen">SetGoalScreen</string>
+    <string name="journal_remove">Remove Item</string>
 
 </resources>

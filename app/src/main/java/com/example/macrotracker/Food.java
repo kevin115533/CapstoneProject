@@ -15,8 +15,9 @@ public class Food {
         set_fat(intF);
         set_total(intP, intC, intF);
     }
+
     public void set_id(int id) {
-        id = _id;
+        _id = id;
     }
 
     public void set_foodName(String foodName) {
