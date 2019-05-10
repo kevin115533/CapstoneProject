@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class JournalScreen extends MainActivity {
+public class JournalScreen extends MainActivity implements Adapter.OnItemClicked {
     private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
+    //private RecyclerView.Adapter mAdapter;
+    private Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
     private Button jHomeButton;
     private Button addEntryButton;
@@ -31,6 +34,7 @@ public class JournalScreen extends MainActivity {
         jHomeButton = (Button)findViewById(R.id.j_screen_home_button);
         addEntryButton = (Button)findViewById(R.id.j_screen_add_button);
 
+        mAdapter.setOnClick(JournalScreen.this);
         viewHomeButton();
         switchToAddScreen();
     }
@@ -55,5 +59,10 @@ public class JournalScreen extends MainActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(JournalScreen.this, "Test", Toast.LENGTH_SHORT).show();
     }
 }

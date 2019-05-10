@@ -4,14 +4,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    private ArrayList<FoodEntry> efoodList;
+    public ArrayList<FoodEntry> efoodList;
+    private OnItemClicked onClick;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public interface OnItemClicked{
+        void onItemClick(int position);
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView textView1;
         public TextView textView2;
@@ -26,6 +32,14 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             textView3 = itemView.findViewById(R.id.cAmount);
             textView4 = itemView.findViewById(R.id.fAmount);
             textView5 = itemView.findViewById(R.id.calorieAmount);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    onClick.onItemClick(getAdapterPosition());
+                }
+            });
+
         }
     }
 
@@ -49,10 +63,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         viewHolder.textView3.setText(Integer.toString(currentItem.geteCar()));
         viewHolder.textView4.setText(Integer.toString(currentItem.geteFat()));
         viewHolder.textView5.setText(Integer.toString(currentItem.geteTotal()));
+
     }
 
     @Override
     public int getItemCount() {
         return efoodList.size();
     }
+
+    public void setOnClick(OnItemClicked onClick){
+        this.onClick=onClick;
+    }
+
 }
